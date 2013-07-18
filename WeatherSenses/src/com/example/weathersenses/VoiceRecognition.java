@@ -12,15 +12,11 @@ import android.widget.Button;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
-import android.speech.tts.TextToSpeech;
-import android.speech.tts.TextToSpeech.OnInitListener;
-import android.util.Log;
 
 
-public class VoiceRecognition extends Activity
+public class MainActivity extends Activity
 {
  
-    private TextToSpeech tts;
     private static final int REQUEST_CODE = 1234;
     private ListView wordsList;
  
@@ -28,10 +24,9 @@ public class VoiceRecognition extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-      
         super.onCreate(savedInstanceState);
         setContentView(R.layout.voice_recog);
-        tts = new TextToSpeech(this, (OnInitListener) this);
+ 
         Button speakButton = (Button) findViewById(R.id.speakButton);
  
         wordsList = (ListView) findViewById(R.id.list);
@@ -74,11 +69,6 @@ public class VoiceRecognition extends Activity
                     RecognizerIntent.EXTRA_RESULTS);
             wordsList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
                     matches));
-            if (wordsList[1] == "one" || "One" || "won" || "Won") {
-            	tts.speak("This will give you the current temperature.",TextToSpeech.QUEUE_FLUSH, null);
-            } else if (wordsList[1] == "two" || "Two" || "to" || "To" || "too" || "Too") {
-            	tts.speak("This will give you a more detailed analysis of the current weather.", TextToSpeech.QUEUE_FLUSH, null);
-            }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
