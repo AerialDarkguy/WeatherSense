@@ -13,7 +13,7 @@
     <Button
         android:id="@+id/speakButton"
         android:layout_width="fill_parent"
-        android:layout_height="378dp"
+        android:layout_height="match_parent"
         android:onClick="speakButtonClicked"
         android:text="Click Me!" />
  
