@@ -137,7 +137,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             	tts1.speak("This will give you clothing suggestions based on the current weather.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else {
-            	tts1.speak("Stupid. That wasn't an option. Try again later when you're ready to listen. Goodbye.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("Unfortunately, that wasn't recognized as a menu item. Please tap the screen and speak to try again.",TextToSpeech.QUEUE_FLUSH, null);
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
