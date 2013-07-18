@@ -1,15 +1,12 @@
-package com.example.weathersenses;
-
-
+package com.example.weathersense;
+ 
 import java.util.Locale;
  
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
  
 public class Sally_Intro extends Activity implements
         TextToSpeech.OnInitListener {
@@ -26,11 +23,10 @@ public class Sally_Intro extends Activity implements
         tts = new TextToSpeech(this, this);
  
     }
-
-
-	@Override
+ 
+    @Override
     public void onDestroy() {
-        // Don't forget to shutdown tts!
+        // Don't forget to shut down tts!
         if (tts != null) {
             tts.stop();
             tts.shutdown();
@@ -49,12 +45,15 @@ public class Sally_Intro extends Activity implements
                     || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.e("TTS", "This Language is not supported");
             } else {
-                tts.speak("Kaveet is a bum", TextToSpeech.QUEUE_FLUSH, null);
+                tts.speak("Welcome to Weather Sense! Say one for the current temperature. Say two for more details about the current weather. Say three for a five day weather forecast.",TextToSpeech.QUEUE_FLUSH, null);
             }
  
         } else {
             Log.e("TTS", "Initilization Failed!");
         }
+        
+        Intent otherIntent = new Intent(this, MainActivity.class);
+        startActivity(otherIntent);
  
     }
-}
+ }
