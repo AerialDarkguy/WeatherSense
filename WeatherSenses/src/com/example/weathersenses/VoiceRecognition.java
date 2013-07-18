@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,11 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends Activity
+public class MainActivity extends Activity implements TextToSpeech.OnInitListener
 {
  
     private static final int REQUEST_CODE = 1234;
     private ListView wordsList;
+    private TextToSpeech tts1;
  
     //Called with the activity is first created.
     @Override
@@ -28,7 +31,7 @@ public class MainActivity extends Activity
         setContentView(R.layout.voice_recog);
  
         Button speakButton = (Button) findViewById(R.id.speakButton);
- 
+        tts1 = new TextToSpeech(this, this);
         wordsList = (ListView) findViewById(R.id.list);
  
         // Disable button if no recognition service is present
@@ -40,6 +43,16 @@ public class MainActivity extends Activity
             speakButton.setEnabled(false);
             speakButton.setText("Recognizer not present");
         }
+    }
+    
+    @Override
+    public void onDestroy() {
+        // Don't forget to shut down tts!
+        if (tts1 != null) {
+            tts1.stop();
+            tts1.shutdown();
+        }
+        super.onDestroy();
     }
  
     //Handle the action of the button being clicked.
@@ -69,7 +82,70 @@ public class MainActivity extends Activity
                     RecognizerIntent.EXTRA_RESULTS);
             wordsList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
                     matches));
+            if ("1".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+             tts1.speak("This will give you the current temperature.",TextToSpeech.QUEUE_FLUSH, null);
+            } 
+            else if ("one".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you the current temperature.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("One".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you the current temperature.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("2".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("two".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("Two".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("to".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("To".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("too".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("Too".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("3".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you a five day weather forecast.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("three".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("Three".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("4".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you clothing suggestions based on the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("four".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you clothing suggestions based on the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("Four".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you clothing suggestions based on the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("for".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you clothing suggestions based on the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("For".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("This will give you clothing suggestions based on the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else {
+            	tts1.speak("Stupid. That wasn't an option. Try again later when you're ready to listen. Goodbye.",TextToSpeech.QUEUE_FLUSH, null);
+            }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+	@Override
+	public void onInit(int status) {
+		// TODO Auto-generated method stub
+		
+	}
 }
