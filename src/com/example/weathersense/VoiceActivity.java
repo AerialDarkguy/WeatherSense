@@ -11,6 +11,7 @@ import android.speech.tts.TextToSpeech.OnInitListener;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class VoiceActivity extends Activity implements TextToSpeech.OnInitListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.voice_recog);
  
-        Button speakButton = (Button) findViewById(R.id.speakButton);
+        ImageButton speakButton = (ImageButton) findViewById(R.id.speakButton);
         tts1 = new TextToSpeech(this, this);
         wordsList = (ListView) findViewById(R.id.list);
  
@@ -41,7 +42,7 @@ public class VoiceActivity extends Activity implements TextToSpeech.OnInitListen
         if (activities.size() == 0)
         {
             speakButton.setEnabled(false);
-            speakButton.setText("Recognizer not present");
+          //  speakButton.setText("Recognizer not present");
         }
     }
     
@@ -83,43 +84,43 @@ public class VoiceActivity extends Activity implements TextToSpeech.OnInitListen
             wordsList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
                     matches));
             if ("1".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-              tts1.speak("This will give you the current temperature.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("It is currently 78 degrees outside.",TextToSpeech.QUEUE_FLUSH, null);
             } 
             else if ("one".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you the current temperature.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("It is currently 78 degrees outside.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("One".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you the current temperature.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("It is currently 78 degrees outside.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("2".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("Right now, the pressure outside is 1014 hectopascals. The minimum temperature is 77 degrees, and the maximum is 85 degrees. The wind is moving at 2.22 miles per hour, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("two".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("Right now, the pressure outside is 1014 hectopascals. The minimum temperature is 77 degrees, and the maximum is 85 degrees. The wind is moving at 2.22 miles per hour, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("Two".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("Right now, the pressure outside is 1014 hectopascals. The minimum temperature is 77 degrees, and the maximum is 85 degrees. The wind is moving at 2.22 miles per hour, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("to".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("Right now, the pressure outside is 1014 hectopascals. The minimum temperature is 77 degrees, and the maximum is 85 degrees. The wind is moving at 2.22 miles per hour, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("To".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("Right now, the pressure outside is 1014 hectopascals. The minimum temperature is 77 degrees, and the maximum is 85 degrees. The wind is moving at 2.22 miles per hour, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("too".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("Right now, the pressure outside is 1014 hectopascals. The minimum temperature is 77 degrees, and the maximum is 85 degrees. The wind is moving at 2.22 miles per hour, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("Too".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("Right now, the pressure outside is 1014 hectopascals. The minimum temperature is 77 degrees, and the maximum is 85 degrees. The wind is moving at 2.22 miles per hour, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("3".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you a five day weather forecast.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("On 7 23 2013, the low will be 74 degrees and the high will be 82 degrees. On 7 24 2013, the low will be 72 degrees and the high will be 82 degrees. On 7 25 2013, the low will be 72 degrees and the high will be 78 degrees.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("three".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("On 7 23 2013, the low will be 74 degrees and the high will be 82 degrees. On 7 24 2013, the low will be 72 degrees and the high will be 82 degrees. On 7 25 2013, the low will be 72 degrees and the high will be 78 degrees.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("Three".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("This will give you a more detailed analysis of the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("This will give you a five day weather forecast.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("4".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("This will give you clothing suggestions based on the current weather.",TextToSpeech.QUEUE_FLUSH, null);
@@ -135,6 +136,12 @@ public class VoiceActivity extends Activity implements TextToSpeech.OnInitListen
             }
             else if ("For".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("This will give you clothing suggestions based on the current weather.",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("hello".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("Hi. What's up?",TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("not much".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+            	tts1.speak("Good to know.",TextToSpeech.QUEUE_FLUSH, null);
             }
             else {
             	tts1.speak("Unfortunately, that command wasn't recognized as a menu item. Please click the screen and speak to try again.",TextToSpeech.QUEUE_FLUSH, null);

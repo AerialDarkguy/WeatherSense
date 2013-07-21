@@ -46,14 +46,14 @@ public class Sally_Intro extends Activity implements
                 Log.e("TTS", "This Language is not supported");
                 tts.setSpeechRate((float) .8);
             } else {
-                tts.speak("Welcome to Weather Sense! Say one for the current temperature. Say two for more details about the current weather. Say three for a five day weather forecast. Say four for clothing suggestions based on the current weather. Tap anywhere on the screen to start speaking!",TextToSpeech.QUEUE_FLUSH, null);
+                tts.speak("Welcome to Weather Sense! Say one for the current temperature in degrees fahrenheit. Say two for a more detailed analysis of the current weather. Say three for a three day forecast. Say four for clothing suggestions based on the current weather. Tap anywhere on the screen to start speaking!",TextToSpeech.QUEUE_FLUSH, null);
             }
  
         } else {
             Log.e("TTS", "Initilization Failed!");
         }
         
-        Intent otherIntent = new Intent(this, MainActivity.class);
+        Intent otherIntent = new Intent(this, VoiceActivity.class);
         startActivity(otherIntent);
  
     }

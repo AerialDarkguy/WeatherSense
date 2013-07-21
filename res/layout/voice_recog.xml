@@ -7,7 +7,7 @@
     <ImageButton
         android:id="@+id/speakButton"
         android:layout_width="fill_parent"
-        android:layout_height="432dp"
+        android:layout_height="fill_parent"
         android:layout_weight="1.79"
         android:onClick="speakButtonClicked"
         android:src="@drawable/weathersense" />
