@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends Activity implements TextToSpeech.OnInitListener
+public class VoiceActivity extends Activity implements TextToSpeech.OnInitListener
 {
  
     private static final int REQUEST_CODE = 1234;
