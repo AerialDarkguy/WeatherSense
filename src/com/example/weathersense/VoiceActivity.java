@@ -1,17 +1,29 @@
 package com.example.weathersense;
 
 import android.app.Activity;
+
 import android.os.Bundle;
+
 import android.content.Intent;
+
 import android.content.pm.PackageManager;
+
 import android.content.pm.ResolveInfo;
+
 import android.speech.RecognizerIntent;
+
 import android.speech.tts.TextToSpeech;
+
 import android.view.View;
+
 import android.widget.ArrayAdapter;
+
 import android.widget.ImageButton;
+
 import android.widget.ListView;
+
 import java.util.ArrayList;
+
 import java.util.List;
 
 
@@ -69,6 +81,7 @@ public class VoiceActivity extends Activity implements TextToSpeech.OnInitListen
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Voice recognition Demo...");
         startActivityForResult(intent, REQUEST_CODE);
+        
     }
  
     //Handle the results from the voice recognition activity.
@@ -84,42 +97,61 @@ public class VoiceActivity extends Activity implements TextToSpeech.OnInitListen
                     matches));
             if ("1".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("It is currently 78 degrees outside.",TextToSpeech.QUEUE_FLUSH, null);
+            	//tts1.speak("It is currently " +temp+ "degrees outside."), TextToSpeech.QUEUE_FLUSH, null);
+            	
             } 
             
             else if ("one".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("It is currently 78 degrees outside.",TextToSpeech.QUEUE_FLUSH, null);
+            	//tts1.speak("It is currently " +temp+ "degrees outside."), TextToSpeech.QUEUE_FLUSH, null);
+
             }
             
             else if ("One".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("It is currently 78 degrees outside.",TextToSpeech.QUEUE_FLUSH, null);
+            	//tts1.speak("It is currently " +temp+ "degrees outside."), TextToSpeech.QUEUE_FLUSH, null);
+
             }
             
             else if ("2".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-            	tts1.speak("Right now, the pressure outside is 1013 hectopascals. The minimum temperature is 72 degrees, and the maximum is 82 degrees. The wind is moving at 1.1 meters per second, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
+            	tts1.speak("Right now, the pressure outside is 1013 hectopascals. The minimum temperature is 72 degrees, and the maximum is 82 degrees. The wind is now moving at 1.1 miles per hour, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
+            	//tts1.speak("Right now, the pressure outside is" +pressure+ "hectopascals. The minimum temperature is " +temp_min+ "degrees, and the maximum is " +temp_max+ "degrees. The wind is now moving at " +speed+ "miles per hour, and the outside humidity is " +humidity+ "percent.",TextToSpeech.QUEUE_FLUSH, null);
             }
             
             else if ("two".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("Right now, the pressure outside is 1013 hectopascals. The minimum temperature is 72 degrees, and the maximum is 82 degrees. The wind is moving at 1.1 meters per second, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
+            	//tts1.speak("Right now, the pressure outside is" +pressure+ "hectopascals. The minimum temperature is " +temp_min+ "degrees, and the maximum is " +temp_max+ "degrees. The wind is now moving at " +speed+ "miles per hour, and the outside humidity is " +humidity+ "percent.",TextToSpeech.QUEUE_FLUSH, null);
+
             }
             
             else if ("Two".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("Right now, the pressure outside is 1013 hectopascals. The minimum temperature is 72 degrees, and the maximum is 82 degrees. The wind is moving at 1.1 meters per second, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
+            	//tts1.speak("Right now, the pressure outside is" +pressure+ "hectopascals. The minimum temperature is " +temp_min+ "degrees, and the maximum is " +temp_max+ "degrees. The wind is now moving at " +speed+ "miles per hour, and the outside humidity is " +humidity+ "percent.",TextToSpeech.QUEUE_FLUSH, null);
+
             }
             
             else if ("to".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("Right now, the pressure outside is 1013 hectopascals. The minimum temperature is 72 degrees, and the maximum is 82 degrees. The wind is moving at 1.1 meters per second, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
+            	//tts1.speak("Right now, the pressure outside is" +pressure+ "hectopascals. The minimum temperature is " +temp_min+ "degrees, and the maximum is " +temp_max+ "degrees. The wind is now moving at " +speed+ "miles per hour, and the outside humidity is " +humidity+ "percent.",TextToSpeech.QUEUE_FLUSH, null);
+
             }
             
             else if ("To".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("Right now, the pressure outside is 1013 hectopascals. The minimum temperature is 72 degrees, and the maximum is 82 degrees. The wind is moving at 1.1 meters per second, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
+            	//tts1.speak("Right now, the pressure outside is" +pressure+ "hectopascals. The minimum temperature is " +temp_min+ "degrees, and the maximum is " +temp_max+ "degrees. The wind is now moving at " +speed+ "miles per hour, and the outside humidity is " +humidity+ "percent.",TextToSpeech.QUEUE_FLUSH, null);
+
             }
             
             else if ("too".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("Right now, the pressure outside is 1013 hectopascals. The minimum temperature is 72 degrees, and the maximum is 82 degrees. The wind is moving at 1.1 meters per second, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
+            	//tts1.speak("Right now, the pressure outside is" +pressure+ "hectopascals. The minimum temperature is " +temp_min+ "degrees, and the maximum is " +temp_max+ "degrees. The wind is now moving at " +speed+ "miles per hour, and the outside humidity is " +humidity+ "percent.",TextToSpeech.QUEUE_FLUSH, null);
+
             }
             
             else if ("Too".contentEquals((String) wordsList.getAdapter().getItem(0))) {
             	tts1.speak("Right now, the pressure outside is 1013 hectopascals. The minimum temperature is 72 degrees, and the maximum is 82 degrees. The wind is moving at 1.1 meters per second, and the outside humidity is 57 percent.",TextToSpeech.QUEUE_FLUSH, null);
+            	//tts1.speak("Right now, the pressure outside is" +pressure+ "hectopascals. The minimum temperature is " +temp_min+ "degrees, and the maximum is " +temp_max+ "degrees. The wind is now moving at " +speed+ "miles per hour, and the outside humidity is " +humidity+ "percent.",TextToSpeech.QUEUE_FLUSH, null);
+
             }
             
             else if ("3".contentEquals((String) wordsList.getAdapter().getItem(0))) {
